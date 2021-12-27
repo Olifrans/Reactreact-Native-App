@@ -1,0 +1,170 @@
+
+criando projeto
+npx react-native init app
+
+
+
+*_No arquivo (index.js) importar a linha abaixo
+ import 'react-native-gesture-handler'; //cuida dos gestos
+
+
+Instalando as lib e bibliotecas:
+Estilizadores:
+npm install styled-components
+
+
+*-Gerenciamento de pagina: --> react navagation
+npm install @react-navigation/native
+
+
+*-Installing dependencies into a bare React Native project
+npm install react-native-screens react-native-safe-area-context
+
+
+*-Stack --> Gerenciamento de pagina: --> react navagation
+npm install @react-navigation/stack
+
+*-Bottom-tabs --> Gerenciamento de pagina: --> react navagation
+npm install @react-navigation/bottom-tabs
+
+
+*_Token Login com JWT
+yarn add @react-native-community/async-storage
+
+*_Geolocalização de login do usuario pega localização
+yarn add @react-native-community/geolocation
+
+*_Permissão de Geolocalização de login do usuario
+npm install --save react-native-permissions
+yarn add react-native-permissions
+
+
+Atualizar o arquivo "AndroidManifest.xml" duplicando a linha de permissão de localização do usuario adcionado (ACCES_FINE_LOCATION")
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCES_FINE_LOCATION" />
+
+
+*_Fazer swiper na tela do app
+https://npm.io/search/keyword:react-native-swiper
+yarn add react-native-swiper
+
+
+*Bibliotecas icones SVG
+yarn add --dev react-native-svg
+yarn add --dev react-native-svg-transformer
+yarn add react-native-svg
+npm install react-native-svg
+yarn add react-native-svg-transformer
+npm install react-native-svg-transformer
+
+
+Merge the contents from your project's metro.config.js file with this config (create the file if it does not exist already).
+// expo v40:
+const { getDefaultConfig } = require("@expo/metro-config");
+
+// expo v41: 
+// remove the @ (see: https://blog.expo.io/expo-sdk-41-12cc5232f2ef)
+const { getDefaultConfig } = require("expo/metro-config");
+
+module.exports = (async () => {
+  const {
+    resolver: { sourceExts, assetExts }
+  } = await getDefaultConfig(__dirname);
+  return {
+    transformer: {
+      babelTransformerPath: require.resolve("react-native-svg-transformer")
+    },
+    resolver: {
+      assetExts: assetExts.filter(ext => ext !== "svg"),
+      sourceExts: [...sourceExts, "svg"]
+    }
+  };
+})();
+
+
+
+
+
+
+// expo v41: 
+// remove the @ (see: https://blog.expo.io/expo-sdk-41-12cc5232f2ef)
+const { getDefaultConfig } = require("expo/metro-config");
+
+module.exports = (async () => {
+  const {
+    resolver: { sourceExts, assetExts }
+  } = await getDefaultConfig(__dirname);
+  return {
+    transformer: {
+
+      //Parte do código original
+      getTransformOptions: async () => ({
+        transform: {
+          experimentalImportSupport: false,
+          inlineRequires: true,
+        },
+      }),
+
+      babelTransformerPath: require.resolve("react-native-svg-transformer")
+    },
+    resolver: {
+      assetExts: assetExts.filter(ext => ext !== "svg"),
+      sourceExts: [...sourceExts, "svg"]
+    }
+  };
+})();
+
+
+
+
+
+
+
+
+Bibliotecas extras:
+https://reactnavigation.org/
+https://reactnavigation.org/docs/getting-started/
+
+Installing dependencies into a bare React Native project?
+
+npm install react-native-screens react-native-safe-area-context
+
+
+
+
+
+
+https://www.youtube.com/watch?v=kk_pGWBOkc4
+
+
+
+estudo posição 20:59
+
+Link  -->Codigos
+https://alunos.b7web.com.br/media/files/5f4e4755b8760c04949ddb89.zip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Suporte:
+https://www.youtube.com/c/ellsonmendesYT/playlists
+https://www.youtube.com/c/BoniekyLacerdaLeal/featured
